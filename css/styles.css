@@ -1,0 +1,322 @@
+    body {
+        padding: 0;
+        margin: 0;
+        padding-top: 60px;
+    }  
+
+    html, body {
+        height: 100%;
+        width: 100%;
+        font-size:13px;
+        font-family: 'Dosis';  
+    }
+
+    a {
+        color: #444;
+    }
+
+    a:hover {
+        color: #1206bb;
+        text-decoration: none;
+}
+    }
+
+    h1 {
+        font-size:15px;
+    }
+
+    h2 {
+        font-family: 'Dosis';
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+    h3 {
+        padding-top: 10px;
+    	font-family: 'Dosis';
+    	font-size: 40px;
+    	font-weight: 700;
+    	margin-top: 0px;
+        color: #e8e119;
+    }
+
+    h4 {
+    	font-family: 'Dosis';
+    	font-size: 18px;
+    	font-weight: 400;
+    }
+
+    h6 {
+        font-family: 'Dosis';
+    }
+
+    ul {
+        padding-left: 0px;
+        margin-top: 10px;
+        list-style:none;
+          -webkit-padding-start: 10px;
+          -webkit-padding-end: 10px;
+    }
+
+    .col-sm-9, .col-md-9 {
+        padding-left: 0px;
+        padding-right: 0px;
+        position: relative;
+        height: 100%;
+    }
+
+    .col-md-3 {
+        height: 100%;
+    }
+
+    .navbar {
+    	margin-bottom: 0px;
+        /*position:relative;*/
+        width:100%;
+        top: 2px;
+        font-family: 'Oswald';
+       /* background-image: linear-gradient(to bottom, #2b6988 0%, #1f4b61 100%);*/
+    }
+
+    .navbar-brand {
+    	font-family: 'Oswald';
+    	text-transform: uppercase;
+    }
+
+    .navbar-right {
+        margin-top: 5px;
+        font-family: 'Dosis';
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .navbar-right a.dropdown-toggle {
+        top: 0;
+        height:55px;
+    }
+
+    #container {
+        height:100%;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        overflow: hidden;
+    }
+
+    .myButton {
+	    margin: 3px;
+	    padding: 8px;
+	    line-height: 15px;
+    }
+
+    #side {
+        background-color: #242426;
+        height:100%;
+       /* width: 100%;*/
+    }
+
+    #line {
+        margin-top:30px;
+        padding-top: 20px;
+        border-top: 1px solid #888;
+        border-width: 80%;
+    }
+
+    .fa-github {
+        font-size: 30px;
+    }
+
+    a .fa-github {
+        color:white;
+    }
+
+    a .fa-github:hover {
+        color: #e8e119;
+    }
+
+    .fa-twitter {
+        font-size: 30px;
+    }
+
+    a .fa-twitter {
+        color:white;
+    }
+
+    a .fa-twitter:hover {
+        color: #e8e119;
+    }
+
+    .fa-facebook {
+        font-size: 30px;
+        vertical-align: top;
+    }
+
+    a .fa-facebook {
+        color:white;
+    }
+
+    a .fa-facebook:hover {
+        color: #e8e119;
+    }
+
+    .input-group {
+        border-radius: 20px;
+    }
+
+
+    #colors {
+        display: table-row;
+    }
+
+    .quartile {
+        display: table-cell;
+    }
+
+    .graph {
+        clear: both;
+        overflow: hidden;
+        display: table;
+        height: 22px;
+        width: 100%;
+        border-radius: 3px;
+        -webkit-background-clip: padding;
+        border: 1px solid #b3b3b3;
+    }
+
+    #myMap {
+	    height: 100%;
+        width: 100%;
+	    position: relative;
+        box-shadow: 0 0 10px rgba(0,0,0,0.55);
+    }
+
+    .row {
+        background-color: #242426;
+        margin-left: 0px;
+        margin-right: 0px;
+        color: white;
+        height: 100%;
+        width:auto;
+    }
+
+    .panel-danger {
+        border-color: #bab40b;    
+    }
+
+    .panel-danger>.panel-heading {
+        background-color: #bab40b;
+        border-color: #bab40b;
+    }
+
+    #infoWindow {
+        background: white;
+        padding: 10px;
+        margin-top: 0px;
+        margin-left: 30px;
+        margin-bottom: 0px;
+        border-radius: 5px;
+        font-size: 10px;
+        position: absolute;
+        bottom: 20px;
+        right: 5px;
+        width: 200px;
+        display: block;
+        opacity: 0.9;
+        color:#242426;
+        font-family: 'Roboto', sans-serif;
+        height: 110px;
+    }
+
+    #infoWindow li.min {
+        float: left;
+        text-transform: uppercase;
+        
+    }
+
+    #infoWindow li.max {
+        float: right;
+        text-transform: uppercase;
+       
+    }
+
+    #infoWindow ul {
+      list-style:none;
+      -webkit-padding-start: 10px;
+      -webkit-padding-end: 10px;
+
+    }
+
+    #infoWindow h5 {
+        font-size:13px;
+        font-family: 'Roboto';
+        font-weight:700;
+        margin-left: 10px;
+    }
+
+    #alink {
+        color: black;
+        font-weight: 700;
+    }
+
+    .btn-primary {
+        border-radius: 30px;
+        background-color: #e8e119;
+        border-color: #a5a010;
+    }
+
+    .sidebar-cell {   
+        display: block;
+        overflow: scroll;
+    }
+
+    #left {
+        padding-top:10px;
+        float: left;
+        width: 100%;
+        color:white;
+    }
+
+    .navbar-default {
+        position: fixed;
+        right:0;
+        top:0;
+        z-index:130;
+    }
+
+    text {
+        font: 12px sans-serif;
+    }
+    
+    #chart svg {
+        height: auto;
+        width:auto;
+    }
+
+    #chart2 svg {
+        height: 80px;
+    }
+
+    g.nvd3 .nv-wrap .nv-discreteBarWithAxes {
+        transform-origin: 0px 0px 0px;
+    }
+
+    .nv-y {
+        display: none;
+    }   
+    .nv-x {
+        display: none;
+    }   
+
+    .nv-zeroLine {
+        display: none;
+    }
+
+    #sq1 {
+        color: ##4daf4a;
+    }
+/*
+    chartContainer {
+        border-top: 1px dashed #504B9D;
+        padding-top: 7px;
+        margin-top: 9px;
+    }*/

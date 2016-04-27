@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Vacant Units for Rent</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-OiWEn8WwtH+084y4yW2YhhH6z/qTSecHZuk/eiWtnvLtU+Z8lpDsmhOKkex6YARr" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:700, 400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="./data/nvd3.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="data/nvd3.css" type="text/css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Where should you live?</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li>
+              <a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn" style="padding-bottom: 19px;"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;About</a>
+            </li>
+
+            <li>
+              <a href="https://github.com/livenlulu/rentalvacancy" target="_blank" style="padding-bottom: 19px;"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                &nbsp;Fork Me on Github</a>
+            </li>
+
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manhattan, NY<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" id="one" class="myButton">Manhattan, NY</a></li>
+                <li><a href="#" id="two" class="myButton">Brooklyn, NY</a></li>
+                <li><a href="#" id="three" class="myButton">Bronx, NY</a></li>
+                <li><a href="#" id="four" class="myButton">Queens, NY</a></li>
+                <li><a href="#" id="five" class="myButton">Staten Island, NY</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div id="container">
+    <div class="row" style="border-top: 2px solid black;">
+    
+      <div class="col-sm-3 col-md-3 sidebar-cell">
+        
+          <div id="left">
+          
+            <!-- <h1>Rate: The number of unoccupied units available for rent in New York City. Bureau of the Census 2010 - 2015</h1><br>
+           
+ -->
+            <div id="side">
+              <h3>$4,416</h3>
+              <h4>of Unoccupied Units Available for Rent in New York City - 2015.</h4>
+            </div>
+
+            
+            <h6><i class="fa fa-square" style="color: #4daf4a;"></i>
+            &nbsp;Median Monthly Income ($)<br>
+            <i class="fa fa-square" style="color: #377eb8;"></i>&nbsp;&nbsp;Median Monthly Rent ($)<br>
+            <i class="fa fa-square" style="color: #e41a1c;"></i>&nbsp;&nbsp;30% Of A Household's Income ($)<br></h6>
+            
+            <!-- <div id="chartContainer"> -->
+              <div id="chart">
+                <svg style="width: 100%;"></svg>
+              </div>
+
+            *By general rule-of-thumb, housing costs should not exceed 30 percent of a household's total income. Compare Blue (Rent) and Red (30% of Income).
+
+            <!-- </div> -->
+
+              <!-- <div id="chart2">
+                <svg></svg>
+              </div> -->
+
+              <div id="line">
+                <h2><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;DOWNLOAD</h2>
+
+                <a href="data/download/rentalvacancy.geojson" id="alink"><button type="button" class="btn btn-primary">GEOJSON</a></button>
+                <a href="data/download/rentalvacancy.csv" id="alink"><button type="button" class="btn btn-primary">CSV</a></button>
+                <a href="data/download/rentalvacancyshp.zip" id="alink"><button type="button" class="btn btn-primary">SHAPEFILE</a></button>
+              </div>
+                      
+              <center><div id="line">
+                <a href="https://github.com/livenlulu/rentalvacancy" target="_blank"><i class="fa fa-github"></i></a>&nbsp;&nbsp;&nbsp;
+                <a href="https://twitter.com/livenlulu" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;
+                <a href="https://www.facebook.com/lu6ky" target="_blank"><i class="fa fa-facebook"></i></a>
+              </div>
+              </center>
+
+              <br>
+          </div>
+      </div>
+
+      <div class="col-xs-14 col-sm-9 col-md-9">
+        <div id="myMap"></div>
+      </div>
+    </div>
+
+      <div id="infoWindow" >
+        <h5>RENTAL VACANCY RATE <br>AT BLOCK LEVEL</h5>
+          <ul>
+            <li class="graph">
+              <div id="colors">
+                <div class="quartile" style="background-color:#FFEDA0"></div>
+                <div class="quartile" style="background-color:#FED976"></div>
+                <div class="quartile" style="background-color:#FEB24C"></div>
+                <div class="quartile" style="background-color:#FD8D3C"></div>
+                <div class="quartile" style="background-color:#FC4E2A"></div>
+                <div class="quartile" style="background-color:#E31A1C"></div>
+                <div class="quartile" style="background-color:#BD0026"></div>
+                <div class="quartile" style="background-color:#0000cc"></div>
+              </div>
+            </li>
+            <li class="min">1000-</li>
+            <li class="max">7000+</li><br><br>
+          </ul>
+      </div>
+
+      <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">% Vacant Units For Rent, 2015</h4>
+            </div>
+            <div class="modal-body">
+              <ul class="nav nav-tabs nav-justified" id="aboutTabs">
+                
+               </ul>
+              <div class="tab-content" id="aboutTabsContent">
+                <div class="tab-pane fade active in" id="about">
+                  <h4> Data Source </h4>
+                  <p> Bureau of the Census 2010 Census PL 94 – 171 files for April 1, 2010, Population Estimates Program supplies various input files for age sex race as of 4/1/2010, ACS survey data (5 year version) has been used for a Summary type file and substitutes on an annual basis the previous decennial SF3 files. </br></br>
+
+                  
+                  </p>
+                  <div class="panel panel-danger">
+                    <div class="panel-heading">Credits and Acknowledgments</div>
+                    <ul class="list-group">
+                      <li class="list-group-item"><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>, <a href="http://leafletjs.com/" target="_blank">Leaflet</a>, <a href="http://nvd3.org/index.html" target="_blank">NVD3</a>. </li>
+                      
+                      <li class="list-group-item">Thank you <a href="https://twitter.com/chris_whong?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">Chris Whong</a> for an excellent course and for being an inspirational professor! <i class="fa fa-thumbs-o-up"></i> </a></li>
+
+                      <li class="list-group-item">Comments or suggestions: Contact <a href="http://www.lucykang.com/contact.html" target="_blank">Lucy Kang</a>. <i class="fa fa-angellist"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="data/nvd3.js"></script>
+     
+  </body>
+</html>
