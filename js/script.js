@@ -121,7 +121,7 @@ var panOptions = {
     updateChart(e.target.feature.properties);
 
     // console.log(layer.feature.properties.income);
-    $('#side').html('<h3>' + '$' + layer.feature.properties.income + '</h3>' + '<h4>' + 'of Unoccupied Units Available for Rent in this Region - 2015.' + '</h4>');
+    $('#side').html('<h3>' + '$' + layer.feature.properties.Location + ' ' + layer.feature.properties.income + '</h3>' + '<h4>' + 'of Unoccupied Units Available for Rent in this Region - 2015.' + '</h4>');
   	}
 
   function resetHighlight(e) {
