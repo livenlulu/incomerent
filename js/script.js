@@ -131,6 +131,7 @@ var panOptions = {
   function onEachFeature(feature, layer) {
     layer.on({
         mouseover: mouseoverFunction,
+        onclick: mouseoverFunction,
         mouseout: resetHighlight
         //click: zoomToFeature
     });
