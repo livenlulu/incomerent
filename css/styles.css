@@ -187,20 +187,22 @@
     }
 
     #myMap {
-	    height: 70%;
+	    height: 100%;
         width: 100%;
-	    position: fixed;
+	    position: relative;
         box-shadow: 0 0 10px rgba(0,0,0,0.55);
         z-index: 1000;
+        top: 18px;
     }
 
     #left {
-        padding-top:428px;
+        padding-top:20px;
         float: left;
-        /*width: 100%;*/
+        width: 100%;
+        
         color: black;
         overflow: scroll;
-        position: relative;
+       /* position: relative;*/
     }
 
     .row {
@@ -210,6 +212,7 @@
         color: black;
         height: 100%;
         width:auto;
+
     }
 
     .panel-danger {
@@ -230,7 +233,7 @@
         border-radius: 5px;
         font-size: 7px;
         position: fixed;
-        bottom: 148px;
+        bottom: 20px;
         right: 5px;
         width: 155px;
         display: block;
