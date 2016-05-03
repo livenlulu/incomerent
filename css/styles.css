@@ -1,7 +1,7 @@
     body {
         padding: 0;
         margin: 0;
-        padding-top: 60px;
+        padding-top: 50px;
     }  
 
     html, body {
@@ -18,8 +18,8 @@
     a:hover {
         color: #1206bb;
         text-decoration: none;
-}
     }
+
 
     h1 {
         font-size:15px;
@@ -33,11 +33,11 @@
     }
     h3 {
         padding-top: 10px;
-    	font-family: 'Dosis';
-    	font-size: 40px;
+    	font-family: 'Montserrat';
+    	font-size: 20px;
     	font-weight: 700;
     	margin-top: 0px;
-        color: #e8e119;
+        color: black;
     }
 
     h4 {
@@ -73,14 +73,16 @@
     	margin-bottom: 0px;
         /*position:relative;*/
         width:100%;
-        top: 2px;
-        font-family: 'Oswald';
+        top: 0px;
+        font-family: 'Dosis';
+        z-index: 1000;
        /* background-image: linear-gradient(to bottom, #2b6988 0%, #1f4b61 100%);*/
     }
 
     .navbar-brand {
-    	font-family: 'Oswald';
+    	font-family: 'Montserrat';
     	text-transform: uppercase;
+        font-size: 23px;
     }
 
     .navbar-right {
@@ -101,6 +103,7 @@
         padding-left: 0px;
         padding-right: 0px;
        /* overflow: hidden;*/
+      
     }
 
     .myButton {
@@ -110,7 +113,7 @@
     }
 
     #side {
-        background-color: #242426;
+        background-color: white;
         height:100%;
        /* width: 100%;*/
     }
@@ -127,7 +130,7 @@
     }
 
     a .fa-github {
-        color:white;
+        color:black;
     }
 
     a .fa-github:hover {
@@ -139,7 +142,7 @@
     }
 
     a .fa-twitter {
-        color:white;
+        color:black;
     }
 
     a .fa-twitter:hover {
@@ -152,7 +155,7 @@
     }
 
     a .fa-facebook {
-        color:white;
+        color:black;
     }
 
     a .fa-facebook:hover {
@@ -184,17 +187,27 @@
     }
 
     #myMap {
-	    height: 100%;
+	    height: 70%;
         width: 100%;
-	    position: relative;
+	    position: fixed;
         box-shadow: 0 0 10px rgba(0,0,0,0.55);
+        z-index: 1000;
+    }
+
+    #left {
+        padding-top:100%;
+        float: left;
+        /*width: 100%;*/
+        color: black;
+        overflow: scroll;
+        position: relative;
     }
 
     .row {
-        background-color: #242426;
+        background-color: white;
         margin-left: 0px;
         margin-right: 0px;
-        color: white;
+        color: black;
         height: 100%;
         width:auto;
     }
@@ -215,16 +228,17 @@
         margin-left: 30px;
         margin-bottom: 0px;
         border-radius: 5px;
-        font-size: 10px;
-        position: absolute;
-        bottom: 20px;
+        font-size: 7px;
+        position: fixed;
+        bottom: 148px;
         right: 5px;
-        width: 200px;
+        width: 155px;
         display: block;
         opacity: 0.9;
         color:#242426;
         font-family: 'Roboto', sans-serif;
-        height: 110px;
+        height: 100px;
+        z-index: 3000;
     }
 
     #infoWindow li.min {
@@ -247,7 +261,7 @@
     }
 
     #infoWindow h5 {
-        font-size:13px;
+        font-size:11px;
         font-family: 'Roboto';
         font-weight:700;
         margin-left: 10px;
@@ -269,18 +283,11 @@
         overflow: scroll;
     }
 
-    #left {
-        padding-top:10px;
-        float: left;
-        /*width: 100%;*/
-        color:white;
-    }
-
     .navbar-default {
         position: fixed;
         right:0;
         top:0;
-        z-index:130;
+        z-index:1300;
     }
 
     text {

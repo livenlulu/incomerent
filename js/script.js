@@ -1,5 +1,5 @@
-var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
 });
 
 var map = L.map('myMap').setView( [40.738153,-73.913612], 11);
@@ -114,6 +114,22 @@ var panOptions = {
         fillOpacity: 0.7
     });
 
+    function onClick(e) {
+      var layer = e.target;
+    // med value
+    //med = e.target.feature.properties.median_income;
+    //console.log(med);
+
+    layer.setStyle({
+        weight: 5,
+        opacity: 1,
+        color: 'white',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    }
+
     if (!L.Browser.ie && !L.Browser.opera) {
         layer.bringToFront();
     }
@@ -121,7 +137,7 @@ var panOptions = {
     updateChart(e.target.feature.properties);
 
     // console.log(layer.feature.properties.income);
-    $('#side').html('<h3>' + '$' + layer.feature.properties.Location + ' ' + layer.feature.properties.income + '</h3>' + '<h4>' + 'of Unoccupied Units Available for Rent in this Region - 2015.' + '</h4>');
+    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + layer.feature.properties.income + '</h3>' + '<h4>' + 'of Unoccupied Units Available for Rent in this Region - 2015.' + '</h4>');
   	}
 
   function resetHighlight(e) {
@@ -131,10 +147,11 @@ var panOptions = {
   function onEachFeature(feature, layer) {
     layer.on({
         mouseover: mouseoverFunction,
-        onclick: mouseoverFunction,
+        
         mouseout: resetHighlight
         //click: zoomToFeature
     });
+   
   }
 
 // subway stations
