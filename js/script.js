@@ -68,7 +68,7 @@ var panOptions = {
 
   var geojson;
 
-  $.getJSON('data/income.geojson', function(data) {
+  $.getJSON('data/comm.geojson', function(data) {
     geojson = L.geoJson(data, {
     	style: style,
     	onEachFeature: onEachFeature
@@ -78,20 +78,20 @@ var panOptions = {
 
 
   function getColor(d) {
-    return d > 7000 ? '#0000cc' :
-           d > 6000  ? '#BD0026' :
-           d > 5000  ? '#E31A1C' :
-           d > 4000  ? '#FC4E2A' :
-           d > 3000  ? '#FD8D3C' :
-           d > 2000  ? '#FEB24C' :
-           d > 1000  ? '#FED976' :
+    return d > .06 ? '#0000cc' :
+           d > .045  ? '#BD0026' :
+           d > .035  ? '#E31A1C' :
+           d > .025  ? '#FC4E2A' :
+           d > .02  ? '#FD8D3C' :
+           d > .01  ? '#FEB24C' :
+           d > .005  ? '#FED976' :
                      '#FFEDA0' ;
   }
 
 
   function style(feature) {
     return {
-        fillColor: getColor(feature.properties.income),
+        fillColor: getColor(feature.properties.vacancy),
         weight: .2,
         opacity: 1,
         color: 'white',
