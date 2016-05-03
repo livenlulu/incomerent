@@ -192,7 +192,7 @@
 	    position: relative;
         box-shadow: 0 0 10px rgba(0,0,0,0.55);
         z-index: 1000;
-        top: 18px;
+        top: 12px;
     }
 
     #left {
