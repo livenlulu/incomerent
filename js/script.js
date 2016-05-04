@@ -2,7 +2,7 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
 });
 
-var map = L.map('myMap').setView( [40.738153,-73.913612], 11);
+var map = L.map('myMap',{tap:false}).setView( [40.738153,-73.913612], 11);
 map.addLayer(layer);
 
 var rentData = [];
