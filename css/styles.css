@@ -258,14 +258,13 @@
 
     #infoWindow {
         background: white;
-        padding: px;
         margin-top: 0px;
         margin-left: 30px;
         margin-bottom: 0px;
         border-radius: 5px;
         font-size: 9px;
         position: fixed;
-        bottom: 131px;
+        bottom: 135px;
         right: 5px;
         width: 155px;
         display: block;
