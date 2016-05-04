@@ -137,7 +137,7 @@ var panOptions = {
     updateChart(e.target.feature.properties);
 
     // console.log(layer.feature.properties.income);
-    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + layer.feature.properties.income + '</h3>' + '<h4>' + 'of Unoccupied Units Available for Rent in this Region - 2015.' + '</h4>');
+    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + '</h3>' + '<h4>' + layer.feature.properties.vacancy*100 + '% of Units Available for Rent' + '</h4>');
   	}
 
   function resetHighlight(e) {
@@ -209,16 +209,16 @@ function updateChart(f){
   rentData[0].values =
     [
         { 
-          "label" : "Median Monthly Income" , 
-          "value" : f.income
+          "label" : "Median Rent" , 
+          "value" : f.medianrent
         } , 
         { 
-          "label" : "Median Monthly Rent" , 
-          "value" : f.medianrent 
-        } , 
-        { 
-          "label" : "30% Of A Household's Total Income" , 
+          "label" : "30% Of Median Income" , 
           "value" : f.income * .3
+        } , 
+        { 
+          "label" : "Felonies (#)" , 
+          "value" : f.felony
         } 
       ]
     d3.select('#chart svg')

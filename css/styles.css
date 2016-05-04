@@ -233,14 +233,14 @@
         border-radius: 5px;
         font-size: 9px;
         position: fixed;
-        bottom: 20px;
+        bottom: 107px;
         right: 5px;
         width: 155px;
         display: block;
         opacity: 0.9;
         color:#242426;
         font-family: 'Roboto', sans-serif;
-        height: 100px;
+        height: 90px;
         z-index: 3000;
     }
 
@@ -303,7 +303,7 @@
     }
 
     #chart2 svg {
-        height: 80px;
+        height: 0px;
     }
 
     g.nvd3 .nv-wrap .nv-discreteBarWithAxes {
@@ -313,9 +313,18 @@
     .nv-y {
         display: none;
     }   
-    .nv-x {
+/*    .nv-x {
         display: none;
     }   
+
+    .nv-x .ticks{
+        display: show;
+    }   */
+
+    .nvd3 .nv-axis line {
+        display:none;
+}
+
 
     .nv-zeroLine {
         display: none;
@@ -324,6 +333,10 @@
     #sq1 {
         color: ##4daf4a;
     }
+
+  
+    
+
 /*
     chartContainer {
         border-top: 1px dashed #504B9D;
