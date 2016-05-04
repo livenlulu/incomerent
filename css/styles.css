@@ -1,7 +1,7 @@
     body {
         padding: 0;
         margin: 0;
-        padding-top: 50px;
+        padding-top: 40px;
     }  
 
     html, body {
@@ -34,7 +34,7 @@
     h3 {
         padding-top: 10px;
     	font-family: 'Montserrat';
-    	font-size: 20px;
+    	font-size: 17px;
     	font-weight: 700;
     	margin-top: 0px;
         color: black;
@@ -42,7 +42,7 @@
 
     h4 {
     	font-family: 'Dosis';
-    	font-size: 18px;
+    	font-size: 13px;
     	font-weight: 400;
     }
 
@@ -76,17 +76,48 @@
         top: 0px;
         font-family: 'Dosis';
         z-index: 1000;
+        height:40px;
+        min-height:40px;
        /* background-image: linear-gradient(to bottom, #2b6988 0%, #1f4b61 100%);*/
+    }
+
+    .navbar-default {
+        position: fixed;
+        right:0;
+        top:0;
+        z-index:1300;
+        height: 40px;
+    }
+
+    .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    }
+    .navbar-header {
+        height: 40px;
+    }
+    .container-fluid {
+
+      height: 40px;
+    }
+
+    .navbar-toggle {
+        padding: 9px 10px;
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
 
     .navbar-brand {
     	font-family: 'Montserrat';
     	text-transform: uppercase;
         font-size: 23px;
+        padding-top: 5px;
+        padding-bottom: 0px;
+        height:40px;
     }
 
     .navbar-right {
-        margin-top: 5px;
+        margin-top: 0px;
         font-family: 'Dosis';
         font-weight: 700;
         text-transform: uppercase;
@@ -94,7 +125,7 @@
 
     .navbar-right a.dropdown-toggle {
         top: 0;
-        height:55px;
+        height:40px;
     }
 
     #container {
@@ -190,13 +221,13 @@
 	    height: 60%;
         width: 100%;
 	    position: relative;
-        box-shadow: 0 0 10px rgba(0,0,0,0.55);
+        /*box-shadow: 0 0 10px rgba(0,0,0,0.55);*/
         z-index: 1000;
-        top: 12px;
+        top: 0px;
     }
 
     #left {
-        padding-top:20px;
+        padding-top:10px;
         float: left;
         width: 100%;
         
@@ -233,14 +264,14 @@
         border-radius: 5px;
         font-size: 9px;
         position: fixed;
-        bottom: 107px;
+        bottom: 145px;
         right: 5px;
         width: 155px;
         display: block;
         opacity: 0.9;
         color:#242426;
         font-family: 'Roboto', sans-serif;
-        height: 90px;
+        height: 80px;
         z-index: 3000;
     }
 
@@ -264,7 +295,7 @@
     }
 
     #infoWindow h5 {
-        font-size:11px;
+        font-size:9px;
         font-family: 'Roboto';
         font-weight:700;
         margin-left: 10px;
@@ -286,12 +317,7 @@
         overflow: scroll;
     }
 
-    .navbar-default {
-        position: fixed;
-        right:0;
-        top:0;
-        z-index:1300;
-    }
+    
 
     text {
         font: 12px sans-serif;
