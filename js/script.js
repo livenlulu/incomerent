@@ -1,5 +1,5 @@
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
 });
 
 var map = L.map('myMap',{tap:false}).setView( [40.738153,-73.913612], 11);
@@ -137,7 +137,7 @@ var panOptions = {
     updateChart(e.target.feature.properties);
 
     // console.log(layer.feature.properties.income);
-    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + '</h3>' + '<h4>' + layer.feature.properties.vacancy*100 + '% of Units Available for Rent' + '</h4>');
+    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + '</h3>' + '<h4>' + '<b>' + layer.feature.properties.vacancy*100 + '%</b>' + ' of Units Available for Rent' + '</h4>');
   	}
 
   function resetHighlight(e) {
