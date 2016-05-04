@@ -88,7 +88,7 @@
 .nvd3 .nv-discretebar .nv-groups text,
 .nvd3 .nv-multibarHorizontal .nv-groups text {
     font-weight: bold;
-    fill: rgba(255,255,255,255);
+    fill: rgba(0,0,0,1);
     stroke: rgba(0,0,0,0);
 }
 
@@ -278,6 +278,7 @@ svg.nvd3-svg {
 .nvd3 text {
     font: normal 12px Dosis;
     color: black;
+    font-weight: bold;
 }
 
 .nvd3 .title {

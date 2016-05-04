@@ -2418,7 +2418,7 @@ nv.models.boxPlotChart = function() {
                 if (staggerLabels) {
                     xTicks
                         .selectAll('text')
-                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 === 0 ? '5' : '17') + ')' })
+                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 === 0 ? '5' : '5') + ')' })
                 }
             }
 
@@ -4276,7 +4276,7 @@ nv.models.discreteBarChart = function() {
                 if (staggerLabels) {
                     xTicks
                         .selectAll('text')
-                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 == 0 ? '5' : '17') + ')' })
+                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 == 0 ? '5' : '5') + ')' })
                 }
 
                 if (rotateLabels) {
@@ -4843,7 +4843,7 @@ nv.models.furiousLegend = function() {
         function setTextColor(d,i) {
             if(vers != 'furious') return '#000';
             if(expanded) {
-                return d.disengaged ? color(d,i) : '#fff';
+                return d.disengaged ? color(d,i) : '#000';
             } else if (!expanded) {
                 return !!d.disabled ? color(d,i) : '#fff';
             }
@@ -8147,7 +8147,7 @@ nv.models.multiBar = function() {
                         return "translate(" + x + "," + y + ")";
                     };
 
-                    var staggerUp = 5, staggerDown = 17;  //pixels to stagger by
+                    var staggerUp = 5, staggerDown = 5;  //pixels to stagger by
                     // Issue #140
                     xTicks
                         .selectAll("text")
