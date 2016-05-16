@@ -1,9 +1,126 @@
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"></a>'
 });
 
 var map = L.map('myMap',{tap:false}).setView( [40.738153,-73.913612], 11);
 map.addLayer(layer);
+
+
+
+
+var price_from, price_to;
+var safety, safetyweight;
+var felonyrecord = 0;
+var felonysum = 0;
+var felonyavg = 0;
+$.getJSON('data/comm.geojson', function(data) {
+    var f = data.features.map(function (item) {
+    // sum all the felony numbers
+    if (item.properties.felony) {
+      this.felonyrecord = this.felonyrecord + 1;
+      this.felonysum = parseInt(item.properties.felony)+ this.felonysum;
+    }
+  });
+  felonyavg = felonysum / felonyrecord;
+  //alert("first read: " + felonyrecord + "," + felonysum + "," + felonyavg.toFixed(3));
+});
+
+$(document).ready(function() {
+  
+  // get parameters from form
+  var strUrl = location.search;
+  var getPara, ParaVal;
+  var aryPara = [];
+  var rent;
+  var rentopt, safeopt;
+ 
+  if (strUrl.indexOf("?") != -1) {
+      var getSearch = strUrl.split("?");
+      getPara = getSearch[1].split("&");
+      for (i = 0; i < getPara.length; i++) {
+        ParaVal = getPara[i].split("=");
+        aryPara.push(ParaVal[0]);
+        aryPara[ParaVal[0]] = ParaVal[1];
+      }
+  }
+  rent = aryPara["rentslider"];
+  safety = aryPara["safeslider"];
+  price_from = 0;
+  
+  if (rent == 6){
+    rentopt = 6;
+    price_to = 10000;
+  } else if (rent == 5){
+    rentopt = 5;
+    price_to = 2400;
+  } else if (rent == 4){
+    rentopt = 4;
+    price_to = 2000;  
+  } else if (rent == 3){
+    rentopt = 3;
+    price_to = 1600;  
+  } else if (rent == 2){
+    rentopt = 2;
+    price_to = 1200;
+  } else if (rent == 1){
+    rentopt = 1;
+    price_to = 800;
+  } else {
+    rentopt = 6;
+    price_to = 10000;
+  }
+  
+  // get safety value 
+  if (safety == 5){
+    safeopt = 5;
+    safetyweight = 0.6;
+  } else if (safety == 4){
+    safeopt = 4;
+    safetyweight = 0.8;
+  } else if (safety == 3){
+    safeopt = 3;
+    safetyweight = 1;
+  } else if (safety == 2){
+    safeopt = 2;
+    safetyweight = 1.2;
+  } else if (safety == 1){
+    safeopt = 1;
+    safetyweight = 2.5;
+  } else {
+    safety = 1;
+    safeopt = 1;
+    safetyweight = 2.5;
+  }
+  
+  $("#r").text(rent);
+  $("#s").text(safety);
+  $("#r").hide();
+  $("#s").hide();
+  
+  //alert(rentopt);
+    var rslider = new Slider("#rentslider", {
+    ticks: [1, 2, 3, 4, 5, 6],
+    value: rentopt,
+    tooltip: 'hide',
+    step: 1,
+    //ticks_labels: ['<$800', '$1200', '$1600', '$2000', '$2400', '>$2400'],
+  });
+  
+  var sslider = new Slider("#safeslider", {
+    ticks: [1, 2, 3, 4, 5],
+    value: safeopt,
+    tooltip: 'hide',
+    step: 1,
+    //ticks_labels: ['Low Risk', '', 'Medium Risk', '', 'High Risk'],
+  });
+  
+  //$("#aboutModal").modal("show");
+    //$(".navbar-collapse.in").collapse("hide");
+    //return false;
+  
+});
+
+
 
 var rentData = [];
 rentData[0]={};
@@ -137,7 +254,7 @@ var panOptions = {
     updateChart(e.target.feature.properties);
 
     // console.log(layer.feature.properties.income);
-    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + '</h3>' + '<h4>' + '<b>' + layer.feature.properties.vacancy*100 + '%</b>' + ' of Units Available for Rent' + '</h4>');
+    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + '</h3>' + '<h4>' + '<b>' + (layer.feature.properties.vacancy*100).toFixed(1) + '%</b>' + ' of Units Available for Rent' + '</h4>');
   	}
 
   function resetHighlight(e) {
@@ -227,6 +344,12 @@ function updateChart(f){
     .call(chart);
   
 }
+
+$('#ex1').slider({
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
 
 
 //bulletchart
