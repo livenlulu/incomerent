@@ -187,7 +187,7 @@ var panOptions = {
 
   $.getJSON('data/comm.geojson', function(data) {
     
-     var f = data.features.map(function (item) {
+      var f = data.features.map(function (item) {
     
     if (parseInt(item.properties.felony) < safetyweight*felonyavg && parseInt(item.properties.medianrent) < price_to){
       setTimeout(function(){
@@ -196,7 +196,7 @@ var panOptions = {
 
 
     geojson = L.geoJson(item, {style: style, onEachFeature: onEachFeature}).addTo(map);
-updateChart(item.features[currid].properties)
+updateChart(data.features[currid].properties)
             
           });
     }
