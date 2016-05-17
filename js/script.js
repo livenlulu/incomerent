@@ -187,10 +187,10 @@ var panOptions = {
 
   $.getJSON('data/comm.geojson', function(data) {
     
-      var f = data.features.map(function (item) {
+      var f = data.features.map(function(item) {
     
     if (parseInt(item.properties.felony) < safetyweight*felonyavg && parseInt(item.properties.medianrent) < price_to){
-      setTimeout(function(){
+      // setTimeout(function(){
             matchr = matchr + 1;
             
 
