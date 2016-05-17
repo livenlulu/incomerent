@@ -6,8 +6,6 @@ var map = L.map('myMap',{tap:false}).setView( [40.738153,-73.913612], 11);
 map.addLayer(layer);
 
 
-
-
 var price_from, price_to;
 var safety, safetyweight;
 var felonyrecord = 0;
@@ -184,15 +182,37 @@ var panOptions = {
     });
 
   var geojson;
+  var matchr=0;
+
 
   $.getJSON('data/comm.geojson', function(data) {
-    geojson = L.geoJson(data, {
-    	style: style,
-    	onEachFeature: onEachFeature
-    }).addTo(map);
-    updateChart(data.features[currid].properties)
+    
+     var f = data.features.map(function (item) {
+    
+    if (parseInt(item.properties.felony) < safetyweight*felonyavg && parseInt(item.properties.medianrent) < price_to){
+      setTimeout(function(){
+            matchr = matchr + 1;
+            
+
+    
+
+    geojson = L.geoJson(item, {style: style, onEachFeature: onEachFeature}).addTo(map);
+updateChart(data.features[currid].properties)
+            
+          },500);
+    }
+    
+    });
+
+
+  $("#about-btn").click(function() {
+    $("#aboutModal").modal("show");
+    $(".navbar-collapse.in").collapse("hide");
+    return false;
   });
 
+
+ });
 
   function getColor(d) {
     return d > .06 ? '#0000cc' :
