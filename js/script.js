@@ -190,7 +190,7 @@ var panOptions = {
       var f = data.features.map(function(item) {
     
     if (parseInt(item.properties.felony) < safetyweight*felonyavg && parseInt(item.properties.medianrent) < price_to){
-      // setTimeout(function(){
+      setTimeout(function(){
             matchr = matchr + 1;
             
 
