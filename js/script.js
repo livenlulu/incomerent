@@ -194,12 +194,11 @@ var panOptions = {
             matchr = matchr + 1;
             
 
-    
 
     geojson = L.geoJson(item, {style: style, onEachFeature: onEachFeature}).addTo(map);
-updateChart(data.features[currid].properties)
+updateChart(item.features[currid].properties)
             
-          },500);
+          });
     }
     
     });
