@@ -88,6 +88,7 @@
         top:0;
         z-index:1300;
         height: 50px;
+        border-bottom: 1px solid #CCD1D1;
     }
 
 
@@ -131,6 +132,7 @@
         width: 100%;
         padding-left: 0px;
         padding-right: 0px;
+        background-color: #F5F5F3;
        /* overflow: hidden;*/
       
     }
@@ -142,10 +144,11 @@
     }
 
     #side {
-        background-color: white;
+       /* background-color: #F7F9F9;*/
         height:100%;
        /* width: 100%;*/
        margin-left: 3px;
+
     }
 
     #line {
@@ -229,7 +232,7 @@
         padding-top:10px;
         float: left;
         width: 100%;
-        
+        background-color: #F5F5F3;
         color: black;
         overflow: scroll;
        /* position: relative;*/
