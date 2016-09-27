@@ -3,7 +3,7 @@
 <a href="http://livenlulu.github.io/incomerent/"><img src="data/vacantunits.png" style="max-width:100%; width: 600px;"/></a>
 <br>
 
-# [Demo](http://livenlulu.github.io/incomerent)
+### [Demo](http://livenlulu.github.io/incomerent)
 
 Features: Bootstrap, Leaflet, NVD3
 
