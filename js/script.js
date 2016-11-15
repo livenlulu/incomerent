@@ -1,8 +1,8 @@
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"></a>'
+  attribution: ''
 });
 
-var map = L.map('myMap',{tap:false}).setView( [40.738153,-73.913612], 11);
+var map = L.map('myMap',{tap:false, attributionControl: false}).setView( [40.738153,-73.913612], 11);
 map.addLayer(layer);
 
 
