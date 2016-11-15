@@ -9,6 +9,7 @@
         width: 100%;
         font-size:13px;
         font-family: 'Dosis';  
+        background-color: #F5F5F3;
     }
 
     a {
@@ -79,6 +80,7 @@
         z-index: 1000;
         height:50px;
         min-height:40px;
+        position: fixed;
        /* background-image: linear-gradient(to bottom, #2b6988 0%, #1f4b61 100%);*/
     }
 
@@ -113,6 +115,7 @@
         font-family: 'Dosis';
         font-weight: 700;
         text-transform: uppercase;
+        padding-right: 0px;
     }
 
     .navbar-right a.dropdown-toggle {
@@ -143,13 +146,7 @@
 	    line-height: 15px;
     }
 
-    #side {
-       /* background-color: #F7F9F9;*/
-        height:100%;
-       /* width: 100%;*/
-       margin-left: 3px;
 
-    }
 
     #line {
         margin-top:30px;
@@ -220,22 +217,68 @@
     }
 
     #myMap {
-	    height: 60%;
+
+	    height: 50%;
         width: 100%;
-	    position: relative;
-        /*box-shadow: 0 0 10px rgba(0,0,0,0.55);*/
-        
-        top: 0px;
+	    position: fixed;
+        box-shadow: 0 0 10px rgba(0,0,0,0.55);
+        min-height: 300px;
+        top: 50px;
     }
 
     #left {
         padding-top:10px;
-        float: left;
-        width: 100%;
+        float: right;
+        width: 54%;
+        bottom: 1px;
+        right: 5px;
+        display: block;
         background-color: #F5F5F3;
         color: black;
-        overflow: scroll;
-       /* position: relative;*/
+        opacity: 0.8;
+        border-radius: 3px;
+        height: 210px;
+        position: fixed;
+    }
+
+    #side {
+       /* background-color: #F7F9F9;*/
+      /*  bottom: 20%;*/
+        padding-left: 0px;
+        position: fixed;
+        width: 100%;
+       margin-left: 3px;
+       padding-left: 10px;
+
+    }
+
+
+    #chart { 
+        
+        width: 54%;
+        position: fixed;
+        bottom: 10px;
+        /*height: 20%;*/
+        display: block;
+        right: 1px;
+    }
+
+    #lef1 {
+        float: left;
+        left: 5px;
+        bottom: 1px;
+       
+        width: 46%;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        margin-left: 10px;
+        margin-right: -20px;
+        position: fixed;
+        display: block;
+    }
+
+    #aboutModal {
+        z-index: 2000;
     }
 
     .row {
@@ -249,12 +292,14 @@
     }
 
     .panel-danger {
-        border-color: #F98F10;    
+        border-color: #000;   
+        width: 80%; 
+
     }
 
     .panel-danger>.panel-heading {
-        background-color: #F98F10;
-        border-color: #F98F10;
+        background-color: #000;
+        border-color: #000;
     }
 
     .panel-danger>.panel-heading {
@@ -272,7 +317,7 @@
         border-radius: 5px;
         font-size: 9px;
         position: fixed;
-        bottom: 151px;
+        top: 45px;
         right: 5px;
         width: 155px;
         display: block;
@@ -280,6 +325,7 @@
         color:#242426;
         font-family: 'Roboto', sans-serif;
         height: 75px;
+        opacity: 0.8;
         z-index:1000;
     }
 
@@ -330,10 +376,11 @@
     text {
         font: 12px sans-serif;
     }
-    
+
     #chart svg {
         height: auto;
         width:auto;
+
     }
 
     #chart2 svg {
@@ -373,6 +420,9 @@
     padding-top: 10px;
     }
 
+#bootstrap-overrides .slider.slider-horizontal {
+    width: 100%;
+}
 
 #ex1Slider .slider-selection {
     background: orange;
@@ -390,3 +440,10 @@
         padding-top: 7px;
         margin-top: 9px;
     }*/
+
+
+
+    @media screen and (max-width: 767px) {
+
+
+    }
