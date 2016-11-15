@@ -17,7 +17,8 @@
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.2/css/bootstrap-slider.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.2/css/bootstrap-slider.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.2/css/bootstrap-slider.min.css"> -->
+    <link href="data/bootstrap-slider.css">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
@@ -35,7 +36,7 @@
 
   </head>
 
-  <body>
+  <body id="bootstrap-overrides">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -50,9 +51,8 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-
             <li>
-              <a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;Filter</a>
+              <a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn" style="padding-bottom: 14px;"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;About</a>
             </li>
 
           </ul>
@@ -66,92 +66,10 @@
       <!-- <div class="col-sm-3 col-md-3 sidebar-cell"> -->
        <!--  <div class="col-xs-14 col-sm-9 col-md-9"> -->
         <div id="myMap"></div>
-     <!--  </div> -->
-          <div id="left">
-          
-            <!-- <h1>Rate: The number of unoccupied units available for rent in New York City. Bureau of the Census 2010 - 2015</h1><br>
-           
- -->
-            <div id="side">
-              <h3>New York City</h3>
-              <h4><b>2.4%</b> of Units Available for Rent</h4>
-            </div>
-            
-            
-            
-            
-            <!-- <div id="chartContainer"> -->
-              <div id="chart">
-                <svg style="width: 100%;height: 140px;"></svg>
-              </div>
-<!-- 
-            *By general rule-of-thumb, housing costs should not exceed 30 percent of a household's total income. Compare Blue (Rent) and Red (30% of Income).
- -->
 
-       <!--    <h6><i class="fa fa-square" style="color: #4daf4a;"></i>
-            &nbsp;Median Monthly Income ($)<br>
-            <i class="fa fa-square" style="color: #377eb8;"></i>&nbsp;&nbsp;Median Monthly Rent ($)<br>
-            <i class="fa fa-square" style="color: #e41a1c;"></i>&nbsp;&nbsp;30% Of A Household's Income ($)<br></h6> -->
-            <!-- </div> -->
 
-              <!-- <div id="chart2">
-                <svg></svg>
-              </div> -->
-
-              
-                      
-             <!--  <center><div id="line">
-                <a href="https://github.com/livenlulu/rentalvacancy" target="_blank"><i class="fa fa-github"></i></a>&nbsp;&nbsp;&nbsp;
-                <a href="https://twitter.com/livenlulu" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;
-                <a href="https://www.facebook.com/lu6ky" target="_blank"><i class="fa fa-facebook"></i></a>
-              </div>
-              </center> -->
-          </div>
-      </div>
-
-      <!-- <div class="col-xs-14 col-sm-9 col-md-9">
-        <div id="myMap"></div>
-      </div> -->
-    
-
-      <div id="infoWindow" >
-        <h5>RENTAL VACANCY RATE</h5>
-          <ul>
-            <li class="graph">
-              <div id="colors">
-                <div class="quartile" style="background-color:#FFEDA0"></div>
-                <div class="quartile" style="background-color:#FED976"></div>
-                <div class="quartile" style="background-color:#FEB24C"></div>
-                <div class="quartile" style="background-color:#FD8D3C"></div>
-                <div class="quartile" style="background-color:#FC4E2A"></div>
-                <div class="quartile" style="background-color:#E31A1C"></div>
-                <div class="quartile" style="background-color:#BD0026"></div>
-                <div class="quartile" style="background-color:#0000cc"></div>
-              </div>
-            </li>
-            <li class="min">0%</li>
-            <li class="max">6%</li><br><br>
-          </ul>
-      </div>
-
-      <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content" style="
-    margin-top: 70px;">
-            <div class="modal-header">
-              <button class="close" type="button" data-dismiss="modal" aria-hidden="false">X</button>
-              <h4 class="modal-title"></h4>
-            </div>
-            <div class="modal-body">
-              <ul class="nav nav-tabs nav-justified" id="aboutTabs" style="
-    margin-top: 0px;">
-                
-               </ul>
-              <div class="tab-content" id="aboutTabsContent">
-                <div class="tab-pane fade active in" id="about">
-                  
-                  </p>
-                  <div class="panel panel-danger">
+        <div id="lef1">
+                            <div class="panel panel-danger">
                     <div class="panel-heading">Define Your Search</div>
                     <ul class="list-group">
 
@@ -161,8 +79,9 @@
                         <div align="center"><input name="rentslider" id="rentslider" type="text"/></div>
                         <table width="100%">
                         <tr align="center">
-                        <td>&nbsp;</td><td>&lt;$800</td><td>$1200</td><td>$1600</td>
-                        <td>$2000</td><td>$2400</td><td>&gt;$2400</td><td>&nbsp;</td>
+                        <td align="left">&lt;$800</td>
+
+                        <td align="right">&gt;$2400</td>
                         </tr>
                         </table>
                       </li>
@@ -189,13 +108,81 @@
                       </form>
                     </ul>
                   </div>
+        </div>
+     <!--  </div> -->
+        <div id="left">
+          
+            <div id="side">
+              <h3>New York City</h3>
+              <h4><b>2.4%</b> of Units Available for Rent</h4>
+            </div>
+            
+            
+            
+              <div id="chart">
+                <svg style="width: 100%;height: 140px;"></svg>
+              </div>
+
+          </div>
+      </div>
+
+      <!-- <div class="col-xs-14 col-sm-9 col-md-9">
+        <div id="myMap"></div>
+      </div> -->
+    
+
+      <div id="infoWindow" >
+        <h5>VACANCY RATE</h5>
+          <ul>
+            <li class="graph">
+              <div id="colors">
+                <div class="quartile" style="background-color:#FFEDA0"></div>
+                <div class="quartile" style="background-color:#FED976"></div>
+                <div class="quartile" style="background-color:#FEB24C"></div>
+                <div class="quartile" style="background-color:#FD8D3C"></div>
+                <div class="quartile" style="background-color:#FC4E2A"></div>
+                <div class="quartile" style="background-color:#E31A1C"></div>
+                <div class="quartile" style="background-color:#BD0026"></div>
+                <div class="quartile" style="background-color:#900000"></div>
+              </div>
+            </li>
+            <li class="min">0%</li>
+            <li class="max">6%</li><br><br>
+          </ul>
+      </div>
+
+      <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">% Vacant Units For Rent, 2015</h4>
+            </div>
+            <div class="modal-body">
+              <ul class="nav nav-tabs nav-justified" id="aboutTabs">
+                
+               </ul>
+              <div class="tab-content" id="aboutTabsContent">
+                <div class="tab-pane fade active in" id="about">
+                  <h4> Data Source </h4>
+                  <p> Bureau of the Census 2010 Census PL 94 – 171 files for April 1, 2010, Population Estimates Program supplies various input files for age sex race as of 4/1/2010, ACS survey data (5 year version) has been used for a Summary type file and substitutes on an annual basis the previous decennial SF3 files. </br></br>
+
+                  
+                  </p>
+                  <div class="panel panel-danger">
+                    <div class="panel-heading">Credits and Acknowledgments</div>
+                    <ul class="list-group">
+                      <li class="list-group-item"><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>, <a href="http://leafletjs.com/" target="_blank">Leaflet</a>, <a href="http://nvd3.org/index.html" target="_blank">NVD3</a>. </li>
+
+                      <li class="list-group-item">Comments or suggestions: Contact <a href="http://www.lucykang.com/contact.html" target="_blank">Lucy Kang</a>. <i class="fa fa-angellist"></i></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

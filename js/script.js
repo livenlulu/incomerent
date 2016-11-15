@@ -214,7 +214,7 @@ updateChart(data.features[currid].properties)
  });
 
   function getColor(d) {
-    return d > .06 ? '#0000cc' :
+    return d > .06 ? '#900000' :
            d > .045  ? '#BD0026' :
            d > .035  ? '#E31A1C' :
            d > .025  ? '#FC4E2A' :
