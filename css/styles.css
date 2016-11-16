@@ -235,9 +235,9 @@
         display: block;
         background-color: #F5F5F3;
         color: black;
-        opacity: 0.8;
+        opacity: 0.9;
         border-radius: 3px;
-        height: 210px;
+        height: 205px;
         position: fixed;
         z-index: 3000;
     }
