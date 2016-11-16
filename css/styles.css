@@ -273,11 +273,11 @@
 
 
     #chart { 
-        margin-top: 50%;
-        width: 100%;
-       /* position: fixed;*/
-       
-        /*height: 20%;*/
+        margin-top: 52%;
+        width: 54%;
+        position: fixed;
+/*       
+        height: 20%;*/
         display: block;
         right: 1px;
         margin-right: 3px;
