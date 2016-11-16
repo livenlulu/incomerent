@@ -1,4 +1,4 @@
-var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+var layer = L.tileLayer('https://api.mapbox.com/styles/v1/livenlulu/citnptqn5005x2itj0fnx1u0v/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGl2ZW5sdWx1IiwiYSI6ImNpZ3h0ZzltbzB1cTQ0cG0zamthcno1dmwifQ.vZrmbXCCq15ZVuF6g6vhkA', {
   attribution: ''
 });
 
@@ -228,7 +228,7 @@ updateChart(data.features[currid].properties)
   function style(feature) {
     return {
         fillColor: getColor(feature.properties.vacancy),
-        weight: .2,
+        weight: .7,
         opacity: 1,
         color: 'white',
         dashArray: '0',
@@ -273,7 +273,7 @@ updateChart(data.features[currid].properties)
     updateChart(e.target.feature.properties);
 
     // console.log(layer.feature.properties.income);
-    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + '</h3>' + '<h4>' + '<b>' + (layer.feature.properties.vacancy*100).toFixed(1) + '%</b>' + ' of Units Available for Rent' + '</h4>');
+    $('#side').html('<h3>' + layer.feature.properties.Location + ' ' + '</h3>' + '<h4>' + '<b>' + (layer.feature.properties.vacancy*100).toFixed(1) + '%</b>' + ' of units available for rent (monthly)' + '</h4>');
   	}
 
   function resetHighlight(e) {
@@ -345,15 +345,15 @@ function updateChart(f){
   rentData[0].values =
     [
         { 
-          "label" : "Median Rent" , 
+          "label" : "Rent" , 
           "value" : f.medianrent
         } , 
         { 
-          "label" : "30% Of Median Income" , 
+          "label" : "30% Income" , 
           "value" : f.income * .3
         } , 
         { 
-          "label" : "Felonies (#)" , 
+          "label" : "Felonies" , 
           "value" : f.felony
         } 
       ]
