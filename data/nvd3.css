@@ -276,13 +276,13 @@ svg.nvd3-svg {
 
 
 .nvd3 text {
-    font: normal 12px Dosis;
+    font: normal 12px Pt Sans;
     color: black;
     font-weight: bold;
 }
 
 .nvd3 .title {
-    font: bold 14px Dosis;
+    font: bold 14px Pt Sans;
     font-color: black;
 }
 
