@@ -346,7 +346,7 @@
         font-family: 'Roboto', sans-serif;
         height: 66px;
         opacity: 0.8;
-        z-index:800;
+        z-index:10;
         border: 1px solid #ddd;
     }
 
