@@ -1,5 +1,5 @@
-var layer = L.tileLayer('https://api.mapbox.com/styles/v1/livenlulu/citnptqn5005x2itj0fnx1u0v/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGl2ZW5sdWx1IiwiYSI6ImNpZ3h0ZzltbzB1cTQ0cG0zamthcno1dmwifQ.vZrmbXCCq15ZVuF6g6vhkA', {
-  attribution: ''
+var layer = L.tileLayer('https://api.mapbox.com/styles/v1/livenlulu/civklqgt8007y2kqqt5b61zc9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGl2ZW5sdWx1IiwiYSI6ImNpZ3h0ZzltbzB1cTQ0cG0zamthcno1dmwifQ.vZrmbXCCq15ZVuF6g6vhkA',{
+    attribution: ''
 });
 
 var map = L.map('myMap',{tap:false, attributionControl: false}).setView( [40.738153,-73.913612], 11);
